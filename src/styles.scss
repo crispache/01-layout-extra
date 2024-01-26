@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.page-title {
+    font-size: 22px;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #d4e300;
+    height: 60px;
+}

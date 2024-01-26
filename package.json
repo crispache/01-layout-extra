@@ -1,0 +1,23 @@
+{
+  "name": "laboratorio-extra",
+  "version": "1.0.0",
+  "description": "Es un layout responsive de una aplicación que contiene:  - Header - Nav - Main - Footer",
+  "source": "./src/index.html",
+  "browserslist": ["defaults"],
+  "scripts": {
+    "start": "rimraf dist && parcel --open",
+    "build": "rimraf dist && parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "parcel",
+    "sass"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0",
+    "parcel": "^2.11.0",
+    "rimraf": "^5.0.5"
+  }
+}
