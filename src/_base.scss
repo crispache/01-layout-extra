@@ -8,7 +8,24 @@ $breakpoint-mobile: 600px; // < 600px
 
 // COLORS
 $primary-color: #d4e300;
+$secondary-color: #414700;
+$tertiary-color: #fbfce5;
 
 
-$dark-text: black;
+$dark-text: #585858;
 $light-text: white;  
+
+
+
+// MIXIN MEDIA QUERIES
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
