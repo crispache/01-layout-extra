@@ -1,22 +1,32 @@
+@use './base' as *;
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.toolbar {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
+header {
+
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        padding: $default-padding;
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            display: none;
+        }
+    }
+
+    .page-title {
+        font-size: 22px;
+        color: $light-text;
+
+        display: flex;
+        align-items: center;
+        padding: $default-padding;
+        background-color: $primary-color;
+        height: 60px;
+    }
 }
 
-.page-title {
-    font-size: 22px;
-    color: white;
-
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: #d4e300;
-    height: 60px;
-}
