@@ -13,6 +13,12 @@ html {
   font-size: $default-font-size;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 body {
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -22,7 +28,7 @@ body {
     "nav main main"
     "footer footer footer";
 
-  /*  @include mobile {
+  @include medium-device {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 5fr auto;
     grid-template-areas:
@@ -30,7 +36,17 @@ body {
       "nav"
       "main"
       "footer";
-  } */
+  }
+
+  @include small-device {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 5fr auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+  }
 }
 
 header {
@@ -57,7 +73,146 @@ header {
     padding: $default-padding;
     background-color: $primary-color;
     height: 60px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: $light-text;
+  }
+}
+
+nav {
+  grid-area: nav;
+
+  .menu-container {
+    background-color: $secondary-color;
+    height: 100vh;
+
+    @include small-device {
+      height: auto;
+      padding: $default-padding;
+    }
+
+    @include medium-device {
+      height: auto;
+      padding: $default-padding;
+    }
+
+    .menu-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: $light-text;
+      text-align: center;
+      padding: $default-padding;
+
+      @include small-device {
+        display: none;
+      }
+
+      @include medium-device {
+        display: none;
+      }
+    }
+
+    ul {
+      @include small-device {
+        display: flex;
+        gap: 10px;
+        text-align: center;
+      }
+
+      @include medium-device {
+        display: flex;
+        gap: 10px;
+        text-align: center;
+      }
+    }
+
+    li {
+      height: 40px;
+      background-color: $tertiary-color;
+      padding: $default-padding;
+      border: 1px solid #dadbc8;
+      color: $dark-text;
+      width: 100%;
+    }
+  }
+}
+
+
+main {
+  grid-area: main;
+
+  .list {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 30px 15px;
+    background-color: #f1f1f1;
+    padding: 35px;
+    height: 100%;
+
+    @include small-device {
+      gap: 15px;
+      padding: 40px 20px;
+    }
+
+    @include medium-device {
+      gap: 15px;
+      padding: 40px 20px;
+    }
+
+
+    .card {
+      width: 325px;
+      height: 200px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 3px;
+      text-align: center;
+      padding: 25px;
+
+      @include small-device {
+        display: flex;
+        align-items: center;
+        gap: 0px 20px;
+        width: 100%;
+        border: none;
+
+        img {
+          height: 140px;
+          width: 145px;
+        }
+        .member-name {
+          flex: 2;
+          text-align: left;
+        }
+      }
+  
+      @include medium-device {
+        display: flex;
+        align-items: center;
+        gap: 0px 20px;
+        width: 100%;
+        border: none;
+
+        img {
+          height: 140px;
+          width: 145px;
+        }
+        .member-name {
+          flex: 2;
+          text-align: left;
+        }
+      }
+
+      img {
+        border-radius: 50%;
+        margin-bottom: 5px;
+      }
+
+      .member-name {
+        font-size: 1.2rem;
+        color: $dark-text;
+      }
+    }
   }
 }
