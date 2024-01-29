@@ -1,31 +1,28 @@
 
-$default-padding: 10px;
-
-$breakpoint-desktop: 768px; // > 768px
-$breakpoint-tablet: 768px; // < 768px y min 600px
-$breakpoint-mobile: 600px; // < 600px
-
-
 // COLORS
 $primary-color: #d4e300;
 $secondary-color: #414700;
 $tertiary-color: #fbfce5;
-
-
 $dark-text: #585858;
 $light-text: white;  
 
+// FONT
+$default-font-family: Arial;
+$default-font-size: 16px;
+
+// OTHER
+$default-padding: 10px;
 
 
 // MIXIN MEDIA QUERIES
-@mixin tablet {
-    @media screen and (max-width: 768px) {
+@mixin medium-device {
+    @media screen and (min-width: 425px) and (max-width: 768px) {
         @content;
     }
 }
 
-@mixin mobile {
-    @media screen and (max-width: 600px) {
+@mixin small-device {
+    @media screen and (max-width: 425px) {
         @content;
     }
 }

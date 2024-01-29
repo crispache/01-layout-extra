@@ -2,91 +2,62 @@
 
 * {
   box-sizing: border-box;
+  font-family: $default-font-family, sans-serif;
+}
+
+body,
+html {
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
+  font-size: $default-font-size;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: auto 5fr auto;
+  grid-template-areas:
+    "header header header"
+    "nav main main"
+    "footer footer footer";
+
+  /*  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 5fr auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+  } */
 }
 
 header {
+  grid-area: header;
+
   .toolbar {
     display: flex;
     justify-content: space-between;
     padding: $default-padding;
     color: $dark-text;
 
-    @include tablet {
+    @include medium-device {
       display: none;
     }
 
-    @include mobile {
+    @include small-device {
       display: none;
     }
   }
 
   .page-title {
-    font-size: 22px;
-    color: $light-text;
-
     display: flex;
     align-items: center;
     padding: $default-padding;
     background-color: $primary-color;
     height: 60px;
-  }
-}
-
-.page-container {
-  display: flex;
-  flex-wrap: wrap;
-
-  nav {
-    width: 180px;
-
-    @include mobile {
-      width: 100%;
-    }
-
-    .menu-container {
-      background-color: $secondary-color;
-      height: 100%;
-
-      @include mobile {
-        padding: $default-padding;
-      }
-
-      .menu-title {
-        font-size: 16px;
-        color: $light-text;
-        font-weight: bold;
-        text-align: center;
-        padding: $default-padding;
-
-        @include mobile {
-          display: none;
-        }
-      }
-
-      ul {
-        @include mobile {
-          display: flex;
-          gap: 0px 10px;
-        }
-      }
-
-      li {
-        height: 40px;
-        width: 100%;
-        background-color: $tertiary-color;
-        padding: $default-padding; // TODO: REVISAR
-        color: $dark-text;
-        border: 1px solid #dadbc8;
-        list-style: none;
-
-        @include mobile {
-          @media screen and (max-width: $breakpoint-mobile) {
-            text-align: center;
-          }
-        }
-      }
-    }
+    font-size: 1.2rem;
+    color: $light-text;
   }
 }
