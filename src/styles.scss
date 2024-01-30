@@ -21,7 +21,7 @@ ul {
 
 body {
   display: grid;
-  grid-template-columns: 1fr 5fr;
+  grid-template-columns: auto 5fr;
   grid-template-rows: auto 5fr auto;
   grid-template-areas:
     "header header header"
@@ -83,14 +83,17 @@ nav {
   height: 100vh;
   position: sticky;
   top: 0;
+  width: 280px;
 
   @include small-device {
+    width: 100%;
     height: auto;
     position: sticky;
     top: 0;
   }
 
   @include medium-device {
+    width: 100%;
     height: auto;
     position: sticky;
     top: 0;
