@@ -218,3 +218,11 @@ main {
     }
   }
 }
+
+footer {
+  grid-area: footer;
+  background-color: $tertiary-color;
+  padding: 20px 15px;
+  height: 60px;
+  font-size: 1.1rem;
+}
