@@ -80,12 +80,24 @@ header {
 
 nav {
   grid-area: nav;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+  @include small-device {
+    height: auto;
+    position: sticky;
+    top: 0;
+  }
+
+  @include medium-device {
+    height: auto;
+    position: sticky;
+    top: 0;
+  }
 
   .menu-container {
     background-color: $secondary-color;
-    height: 100vh;
-    position: sticky;
-    top: 0;
 
     @include small-device {
       height: auto;
@@ -138,7 +150,6 @@ nav {
   }
 }
 
-
 main {
   grid-area: main;
 
@@ -161,7 +172,6 @@ main {
       gap: 15px;
       padding: 40px 20px;
     }
-
 
     .card {
       width: 325px;
@@ -188,7 +198,7 @@ main {
           text-align: left;
         }
       }
-  
+
       @include medium-device {
         display: flex;
         align-items: center;
