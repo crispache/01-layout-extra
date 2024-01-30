@@ -84,6 +84,8 @@ nav {
   .menu-container {
     background-color: $secondary-color;
     height: 100vh;
+    position: sticky;
+    top: 0;
 
     @include small-device {
       height: auto;
